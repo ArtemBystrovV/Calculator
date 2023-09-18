@@ -1,4 +1,4 @@
-```csharp
+
 class Calculator
 {
     static void Main()
@@ -107,4 +107,3 @@ class Calculator
         } while (choice != 9);
     }
 }
-```
