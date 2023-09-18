@@ -1,0 +1,110 @@
+```csharp
+class Calculator
+{
+    static void Main()
+    {
+        int choice;
+        double num1, num2;
+        do
+        {
+            Console.WriteLine("операции:");
+            Console.WriteLine("1.+");
+            Console.WriteLine("2.-");
+            Console.WriteLine("3.*");
+            Console.WriteLine("4.:");
+            Console.WriteLine("5.степень");
+            Console.WriteLine("6.корень");
+            Console.WriteLine("7.Найти 1%");
+            Console.WriteLine("8.факториал");
+            Console.WriteLine("9.Выход");
+            choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("С чем сложить: ");
+                    num2 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Результат: {num1 + num2}");
+                    break;
+                case 2:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("Из чего вычесть: ");
+                    num2 = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"результат: {num1 - num2}");
+                    break;
+                case 3:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("На что умножить: ");
+                    num2 = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Результат: {num1 * num2}");
+                    break;
+                case 4:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("На что разделить: ");
+                    num2 = double.Parse(Console.ReadLine());
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("На 0 не делят.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Результат: {num1 / num2}");
+                    }
+                    break;
+                case 5:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите степень: ");
+                    int power = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"Результат: {Math.Pow(num1, power)}");
+                    break;
+                case 6:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    if (num1 < 0)
+                    {
+                        Console.WriteLine("Число отрицательное.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Результат: {Math.Sqrt(num1)}");
+                    }
+                    break;
+                case 7:
+                    Console.Write("Введите число: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Результат: {num1 * 0.01}");
+                    break;
+                case 8:
+                    Console.Write("Введите число: ");
+                    int factorialNum = int.Parse(Console.ReadLine());
+                    if (factorialNum < 0)
+                    {
+                        Console.WriteLine("Число орицательное.");
+                    }
+                    else
+                    {
+                        int factorial = 1;
+                        for (int i = 1; i <= factorialNum; i++)
+                        {
+                            factorial *= i;
+                        }
+                        Console.WriteLine($"Результат: {factorial}");
+                    }
+                    break;
+                case 9:
+                    Console.WriteLine("Завершено.");
+                    break;
+                default:
+                    Console.WriteLine("так нельзя.");
+                    break;
+            }
+            Console.WriteLine();
+        } while (choice != 9);
+    }
+}
+```
